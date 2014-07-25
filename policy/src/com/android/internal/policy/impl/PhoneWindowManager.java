@@ -4437,7 +4437,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     mKeyguardMediator.onWakeKeyWhenKeyguardShowingTq(keyCode);
                 } else if ((keyCode != KeyEvent.KEYCODE_VOLUME_UP) && (keyCode != KeyEvent.KEYCODE_VOLUME_DOWN)) {
                     // Otherwise, wake the device ourselves.
-                    result |= ACTION_WAKE_UP;
+                    mPowerManager.wakeUp(SystemClock.uptimeMillis());
                 }
             }
         }
